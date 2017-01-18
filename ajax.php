@@ -27,6 +27,7 @@ if ($_GET['section'] == "localTx") {
    $lastHeard = Array();
    for ($i = 0; $i < count($localTXList); $i++) {
       $listElem = $localTXList[$i];
+      $listElem[5] = str_replace(" ","&nbsp;",$listElem[5]);
       if (defined("ENABLEXTDLOOKUP")) {
          if ($listElem[6] == "RF" && ($listElem[1]=="D-Star" || startsWith($listElem[1], "DMR") || $listElem[1]=="YSF" || $listElem[1]=="P25")) {
             $listElem[3] = getName($listElem[2]);
